@@ -3,7 +3,7 @@
 [![Lua](https://img.shields.io/badge/Lua-5.4-blue)](https://www.lua.org)
 [![Roblox](https://img.shields.io/badge/Roblox-platform-red)](https://www.roblox.com)
 [![Luau](https://img.shields.io/badge/Luau-language-00A2FF)](https://luau.org)
-![Obfuscator](https://img.shields.io/badge/Obfuscator-yes-orange)
+![Obfuscator](https://img.shields.io/badge/Obfuscator-yes-brightgreen)
 ![Protector](https://img.shields.io/badge/Protector-yes-brightgreen)
 
 # Eatfuscator
