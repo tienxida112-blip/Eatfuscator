@@ -8,12 +8,10 @@
 
 # Eatfuscator
 
-https://dsc.gg/Eatfuscator
-
 Lua / Luau source protection.
 
 ```lua
--- Protected By Eatfuscator | dsc.gg/eatfuscator
+-- Protected By Eatfuscator | dsc.gg/<removed>
 return({function(...)<body>end})({...})
 ```
 
