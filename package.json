@@ -1,0 +1,19 @@
+{
+  "name": "eatfuscator",
+  "private": true,
+  "description": "Lua/Luau obfuscator: source -> own register bytecode -> interpreter with anti-tamper envelope",
+  "main": "index.js",
+  "scripts": {
+    "test": "node cli.js suite",
+    "bot": "node bot.js",
+    "samples": "node tools/build_samples.js",
+    "check": "node cli.js suite --quick",
+    "audit": "node tools/audit.js Sample/Normal.lua",
+    "luau": "sh tools/get-luau.sh"
+  },
+  "devDependencies": {
+    "fengari": "^0.1.5",
+    "fengari-node-cli": "^0.1.0",
+    "luaparse": "^0.3.1"
+  }
+}
