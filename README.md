@@ -1,5 +1,4 @@
 ![Banner Repo](https://raw.githubusercontent.com/tienxida112-blip/Eatfuscator/refs/heads/main/Background.png)
-![AGPL v3](https://shields.io)
 [![AGPL v3](https://img.shields.io/badge/AGPL-v3-blue)](https://www.gnu.org/licenses/agpl-3.0.html)
 [![Lua](https://img.shields.io/badge/Lua-5.4-blue)](https://www.lua.org)
 [![Roblox](https://img.shields.io/badge/Roblox-platform-red)](https://www.roblox.com)
