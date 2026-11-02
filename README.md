@@ -1,5 +1,11 @@
-![Banner Repo](https://https://raw.githubusercontent.com/tienxida112-blip/Eatfuscator/main/Background.png)
-![Obfuscator](https://shields.io) ![Protector](https://shields.io) ![Luau](https://shields.io) ![Lua](https://shields.io) ![Roblox](https://shields.io) ![License: AGPL v3](https://shields.io)
+![Banner Repo]([https://https://raw.githubusercontent.com/tienxida112-blip/Eatfuscator/main/Background.png](https://raw.githubusercontent.com/tienxida112-blip/Eatfuscator/refs/heads/main/Background.png))
+![License: AGPL v3](https://shields.io)
+![Lua](https://shields.io)
+![Roblox](https://shields.io)
+![Luau](https://shields.io)
+![Obfuscator](https://shields.io)
+![Protector](https://shields.io)
+
 # Eatfuscator
 
 https://dsc.gg/Eatfuscator
