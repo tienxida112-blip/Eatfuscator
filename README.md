@@ -1,4 +1,4 @@
-![Banner Repo]([https://https://raw.githubusercontent.com/tienxida112-blip/Eatfuscator/main/Background.png](https://raw.githubusercontent.com/tienxida112-blip/Eatfuscator/refs/heads/main/Background.png))
+![Banner Repo](https://raw.githubusercontent.com/tienxida112-blip/Eatfuscator/refs/heads/main/Background.png)
 ![License: AGPL v3](https://shields.io)
 ![Lua](https://shields.io)
 ![Roblox](https://shields.io)
