@@ -1,0 +1,25 @@
+{
+  "name": "eatfuscator",
+  "private": true,
+  "version": "0.29.0",
+  "description": "Lua/Luau obfuscator: source -> own register bytecode -> interpreter with anti-tamper envelope, plus hosted delivery stub",
+  "main": "index.js",
+  "scripts": {
+    "start": "node cli.js",
+    "test": "node src/Toolchain/suite.js",
+    "samples": "node tools/build_samples.js",
+    "audit": "node tools/audit.js Test/smoke_test.lua",
+    "host": "node tools/host.js",
+    "verify": "node tools/verify.js",
+    "hosts": "node tools/hosts.js",
+    "tamper": "node tools/tamper.js",
+    "bench": "node tools/bench.js",
+    "client": "node tools/robloxclient.js"
+  },
+  "devDependencies": {
+    "fengari": "^0.1.5",
+    "fengari-node-cli": "^0.1.0",
+    "luaparse": "^0.3.1"
+  },
+  "license": "AGPL-3.0-only"
+}
