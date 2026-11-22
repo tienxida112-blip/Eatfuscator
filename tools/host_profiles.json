@@ -1,0 +1,230 @@
+{
+ "comment": "Host profiles for the off-platform gate. Each entry says what the host is, how to build its prelude, and what an artifact must do there. `shim` prepends tools/roblog.lua (a genuine-DataModel Roblox host). `expect` is either 'run' (payload must print) or 'stop' (payload must never print). Profiles whose id starts with 'roblox-' or that describe an attached debugger model a genuine client's real quirks (locked metatables, a shared _G, a reduced debug table) and must run.",
+ "profiles": [
+  {
+   "id": "bare-luau",
+   "label": "bare Luau interpreter",
+   "why": "No game, no Instance, no task: the first gate line already fails.",
+   "shim": false,
+   "prelude": "",
+   "expect": "stop"
+  },
+  {
+   "id": "lune",
+   "label": "Lune-like runtime (Luau without Roblox)",
+   "why": "Luau libraries are present but nothing from the Roblox API is.",
+   "shim": false,
+   "prelude": "local game,workspace,Instance,Enum,task,typeof=nil,nil,nil,nil,nil,nil",
+   "expect": "stop"
+  },
+  {
+   "id": "lua51",
+   "label": "Lua 5.1 host wearing a Luau hat",
+   "why": "_VERSION says Lua, table.create/freeze and bit32 are absent.",
+   "shim": false,
+   "prelude": "local _VERSION=\"Lua 5.1\" local table={insert=table.insert,remove=table.remove,concat=table.concat,sort=table.sort,unpack=table.unpack,getn=table.getn} local bit32=nil local utf8=nil local typeof=nil",
+   "expect": "stop"
+  },
+  {
+   "id": "table-as-game",
+   "label": "table posing as game",
+   "why": "typeof(game) is 'table'; a DataModel is never a plain table. The fake is installed in the environment, which is what the loader reads - a local shadow cannot reach it any more now that the gate names nothing.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) E.game={ClassName=\"DataModel\",Parent=nil,GetChildren=function() return {} end,GetService=function() return {} end,FindFirstChild=function() end} E.workspace={} end",
+   "expect": "stop"
+  },
+  {
+   "id": "part-as-game",
+   "label": "Instance that is not a DataModel",
+   "why": "Real typeof, real Instance, wrong class name, installed in the environment.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) E.game=Instance.new(\"Part\") end",
+   "expect": "stop"
+  },
+  {
+   "id": "inventing-services",
+   "label": "GetService that invents services",
+   "why": "GetService invents services instead of refusing unknown ones, installed in the environment.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) local raw=E.game E.game=setmetatable({ClassName=\"DataModel\",Parent=nil},{__index=function(_,k) if k==\"GetService\" then return function() return {} end end return raw[k] end}) end",
+   "expect": "stop"
+  },
+  {
+   "id": "no-table-create",
+   "label": "Luau before table.create (pre-0.5.1 Roblox)",
+   "why": "Luau before table.create (pre-0.5.1 Roblox), installed in the environment.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) E.table={freeze=table.freeze,unpack=table.unpack,insert=table.insert,concat=table.concat,sort=table.sort,remove=table.remove} end",
+   "expect": "stop"
+  },
+  {
+   "id": "lying-typeof",
+   "label": "typeof that lies",
+   "why": "typeof that answers like type, so a real Instance reads as a table, installed in the environment.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) E.typeof=function(v) return type(v) end end",
+   "expect": "stop"
+  },
+  {
+   "id": "swapped-string-library",
+   "label": "a swapped global string library no longer stops the payload",
+   "why": "0.17.0 parked here, and that check is what froze every real Roblox client: Roblox locks built-in metatables, so the identity comparison could never hold there. The payload no longer needs it - every string helper is captured into a local at load, so a library swapped afterwards is simply never called. Kept as a profile so the decision stays visible.",
+   "shim": true,
+   "prelude": "local s={} for k,v in next,string do s[k]=v end s.dump=function() return \"\" end local string=s",
+   "expect": "run"
+  },
+  {
+   "id": "shadow-g",
+   "label": "a shadow _G carrying a swapped library no longer stops the payload",
+   "why": "_G is shared between scripts in a real game, so judging the host by what it contains was always unsound. Nothing reads _G now; the profile stays as the regression guard for that decision.",
+   "shim": true,
+   "prelude": "local g={} for k,v in next,_G do g[k]=v end local s={} for k,v in next,g.string do s[k]=v end g.string=s _G=g",
+   "expect": "run"
+  },
+  {
+   "id": "genuine-roblox",
+   "label": "genuine Roblox host (DataModel shim)",
+   "why": "Everything the gate asks for is real, so the payload must run.",
+   "shim": true,
+   "prelude": "",
+   "expect": "run"
+  },
+  {
+   "id": "proxied-game",
+   "label": "proxied DataModel",
+   "why": "Proxied DataModel in the environment: the proxy answers every name, so only a behavioural check catches it.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) local raw=E.game E.game=setmetatable({ClassName=raw.ClassName,Parent=raw.Parent},{__index=function(_,k) return raw[k] end}) end",
+   "expect": "stop"
+  },
+  {
+   "id": "genuine-roblox-wrapped",
+   "label": "genuine Roblox host with a wrapped task library",
+   "why": "Client-side libraries get wrapped all the time; the gate only reads through them, so the payload must run.",
+   "shim": true,
+   "prelude": "local raw=task local task=setmetatable({},{__index=function(_,k) return raw[k] end})",
+   "expect": "run"
+  },
+  {
+   "id": "roblox-locked-metatables",
+   "label": "genuine Roblox, locked built-in metatables",
+   "why": "Roblox locks the metatables of strings, numbers and functions, so getmetatable(\"x\") hands back the string 'This metatable is locked' instead of a table. A 0.17.0 check compared that against the string library and parked every real client - this profile keeps that from coming back.",
+   "shim": true,
+   "prelude": "local __gm=getmetatable getmetatable=function(v) local t=type(v) if t==\"string\" or t==\"number\" or t==\"boolean\" or t==\"function\" then return \"The metatable is locked\" end return __gm(v) end",
+   "expect": "run"
+  },
+  {
+   "id": "roblox-shared-g",
+   "label": "genuine Roblox, _G written by another script",
+   "why": "_G is shared between all scripts in a game, so another script may have replaced or stubbed entries in it. The gate must not judge the host by what it finds there.",
+   "shim": true,
+   "prelude": "local _G={string={},table={},typeof=function() return nil end,game=nil,print=function() end}",
+   "expect": "run"
+  },
+  {
+   "id": "roblox-debug-lite",
+   "label": "genuine Roblox, client debug library",
+   "why": "The Roblox client debug table has info/traceback/profilebegin and no gethook, which is exactly the surface Luau clients provide.",
+   "shim": true,
+   "prelude": "local debug={info=debug.info,traceback=debug.traceback,profilebegin=function() end,profileend=function() end}",
+   "expect": "run"
+  },
+  {
+   "id": "debugger-attached",
+   "label": "genuine Roblox with a debugger or profiler attached",
+   "why": "Studio and the profiler install a debug hook, so debug.gethook() is non-nil during a perfectly legitimate run. Treating a hook as tampering poisoned real sessions.",
+   "shim": true,
+   "prelude": "local __hw=function() end if debug.gethook~=nil then debug.gethook=function() return __hw end end",
+   "expect": "run"
+  },
+  {
+   "id": "decoy-_ENV",
+   "label": "host that defines a global named _ENV",
+   "why": "On Luau `_ENV` is an ordinary global name, not a language feature, so any host can define it. 0.18.0 used to read it before getfenv and would capture itself into whatever table the host supplied - the payload then ran into a fake global table and printed nothing. The loader now validates every candidate and prefers getfenv on any host that has it.",
+   "shim": true,
+   "prelude": "local _ENV=setmetatable({},{__index=function() return 1 end,__call=function(t) return t end})",
+   "expect": "run"
+  },
+  {
+   "id": "no-environment",
+   "label": "host with no usable script environment",
+   "why": "getfenv is gone and both _G and _ENV are empty tables. The artifact must say so with a named error; a silent return is what 'no output from Luau' looked like from the outside.",
+   "shim": false,
+   "prelude": "local getfenv=nil local _G={} local _ENV={}",
+   "expect": "stop"
+  },
+  {
+   "id": "pcall-wrapped",
+   "label": "host that wraps pcall in Lua and forwards every call",
+   "why": "A forwarding wrapper keeps pcall's behaviour, so a check that only calls pcall cannot see it. The chain asks debug.info where pcall came from, and a Lua closure wearing pcall's name is not a builtin.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) local raw=E.pcall E.pcall=function(...) return raw(...) end end",
+   "expect": "stop"
+  },
+  {
+   "id": "getfenv-wrapped",
+   "label": "host that wraps getfenv in Lua and forwards every call",
+   "why": "The classic way to hand a loader a doctored environment: wrap getfenv, answer with a table of your choosing. Forwarding it faithfully keeps every behavioural check green, so the provenance check is what catches it.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) local raw=E.getfenv E.getfenv=function(...) return raw(...) end end",
+   "expect": "stop"
+  },
+  {
+   "id": "debug-info-removed",
+   "label": "host with debug.info taken away",
+   "why": "Luau always ships debug.info. A host that has debug but not info has had it removed, which is exactly what an executor does before it starts hooking things.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) local d={} for k,v in next,E.debug do d[k]=v end d.info=nil E.debug=d end",
+   "expect": "stop"
+  },
+  {
+   "id": "instance-new-replaced",
+   "label": "host whose Instance.new hands back a table",
+   "why": "Instance.new is the most replaced function in a faked Roblox client: returning a table with the right ClassName satisfied every name-based check this tool used to make. It no longer satisfies the type one.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) E.Instance=setmetatable({new=function(cls) return {ClassName=cls,Parent=nil} end},{__index=E.Instance}) end",
+   "expect": "stop"
+  },
+  {
+   "id": "atlas-fresh-singleton",
+   "label": "GetService that hands out a fresh handle every call",
+   "why": "A service is a singleton: game:GetService(\"Players\") is one object for the life of the session, FindFirstChild agrees with it, and IsA agrees with its ClassName. A host that builds a new table per call satisfies every name-based test and fails all three of these.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) local real=E.game local mt=getmetatable(real) E.game=setmetatable({ClassName=\"DataModel\",Name=\"Game\",Parent=nil,GetService=function(self,name) local s=real.GetService(real,name) return setmetatable({ClassName=s.ClassName,Name=s.Name},{__index=function(_,k) return s[k] end}) end,GetChildren=function(self) return real.GetChildren(real) end,FindFirstChild=function(self,name) return real.FindFirstChild(real,name) end,IsA=function(self,n) return n==\"DataModel\" or n==\"Instance\" end},mt) end",
+   "expect": "stop"
+  },
+  {
+   "id": "atlas-fat-child-list",
+   "label": "DataModel whose child list is padded with tables",
+   "why": "Every child of the DataModel is a service, so every child must be an Instance parented to the DataModel. A host with a long child list and only a few real services is a table of handles with a list bolted on.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) local real=E.game local mt=getmetatable(real) local GetChildren=function(self) return real.GetChildren(real) end E.game=setmetatable({ClassName=\"DataModel\",Name=\"Game\",Parent=nil,GetService=function(self,name) return real.GetService(real,name) end,GetChildren=function(self) local k=GetChildren(self) local out={} for i=1,#k do out[i]=k[i] end for i=1,12 do out[#out+1]={ClassName=\"Part\",Name=\"Ghost\"..i,Parent=self} end return out end,FindFirstChild=function(self,name) return real.FindFirstChild(real,name) end,IsA=function(self,n) return n==\"DataModel\" or n==\"Instance\" end},mt) end",
+   "expect": "stop"
+  },
+  {
+   "id": "atlas-invented-class",
+   "label": "Instance.new that invents classes",
+   "why": "A real Instance.new raises on a class that does not exist. A host that answers every class name with a table cannot be asked what a class is, so the artifact has to ask it for one that is not a class.",
+   "shim": true,
+   "prelude": "do local E=getfenv(1) local I=E.Instance local raw=I.new I.new=function(cls,parent) local ok,inst=pcall(raw,cls,parent) if ok then return inst end return {ClassName=cls,Parent=parent} end end",
+   "expect": "stop"
+  },
+  {
+   "id": "dumped-env",
+   "label": "replayed environment (tables)",
+   "why": "Every API answered, every name right - but the instances are tables, because a log records answers, not an engine. `type(game)` is \"table\", `rawget` succeeds, `ClassName` is writable: the artifact refuses it.",
+   "shim": false,
+   "fixture": "tools/table-host.lua",
+   "prelude": "",
+   "expect": "stop"
+  },
+  {
+   "id": "logger-transparent",
+   "label": "transparent logger",
+   "why": "Records every call and forwards it to the genuine host unchanged. Nothing here is a lie, so the artifact is expected to run: what these checks buy is that a *replay* of the recording does not.",
+   "shim": true,
+   "prelude": "local __log={} local __gs=game.GetService game.GetService=function(self,n) __log[#__log+1]=n local ok,v=pcall(__gs,self,n) if ok then return v end error(v,0) end local __in=Instance.new Instance.new=function(...) __log[#__log+1]='new' return __in(...) end",
+   "expect": "run"
+  }
+ ]
+}

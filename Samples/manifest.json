@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Test/cases_state_machine.lua",
+    "output": "Samples/sample_state_machine.lua",
+    "seed": 136493144,
+    "bytes": 103879
+  },
+  {
+    "input": "Test/cases_matrix.lua",
+    "output": "Samples/sample_matrix.lua",
+    "seed": 2045640106,
+    "bytes": 105170
+  },
+  {
+    "input": "Test/cases_sorters.lua",
+    "output": "Samples/sample_sorters.lua",
+    "seed": 1344057126,
+    "bytes": 104583
+  },
+  {
+    "input": "Test/cases_operators.lua",
+    "output": "Samples/sample_operators.lua",
+    "seed": 1724988535,
+    "bytes": 105580
+  },
+  {
+    "input": "Test/cases_binary.lua",
+    "output": "Samples/sample_binary.lua",
+    "seed": 1915850992,
+    "bytes": 104478
+  },
+  {
+    "input": "Test/cases_upvalues.lua",
+    "output": "Samples/sample_upvalues.lua",
+    "seed": 323019833,
+    "bytes": 103198
+  },
+  {
+    "input": "Test/cases_generators.lua",
+    "output": "Samples/sample_generators.lua",
+    "seed": 3169962954,
+    "bytes": 104681
+  },
+  {
+    "input": "Test/cases_json.lua",
+    "output": "Samples/sample_json.lua",
+    "seed": 2078316969,
+    "bytes": 102783
+  },
+  {
+    "input": "Test/cases_errors.lua",
+    "output": "Samples/sample_errors.lua",
+    "seed": 1655475605,
+    "bytes": 105538
+  },
+  {
+    "input": "Test/cases_scoping.lua",
+    "output": "Samples/sample_scoping.lua",
+    "seed": 1051575035,
+    "bytes": 104618
+  }
+]
