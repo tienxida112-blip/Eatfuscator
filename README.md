@@ -9,8 +9,8 @@
 [![Release](https://img.shields.io/github/v/release/tienxida112-blip/Eatfuscator?style=flat-square&logo=package&color=0d1117&labelColor=161b22&label=RELEASE)](https://github.com/tienxida112-blip/Eatfuscator/releases)
 
 [![License AGPLv3](https://img.shields.io/badge/AGPLv3_LICENSE-0d1117?style=flat-square&logo=gnu&logoColor=white)](https://github.com/tienxida112-blip/Eatfuscator/blob/main/LICENSE.txt)
-[![Lua Obfuscator](https://img.shields.io/badge/%3CLua%3E_OBFUSCATOR-0d1117?style=flat-square&logo=lua&logoColor=38bdf8)](https://github.com/tienxida112-blip/Eatfuscator)
-[![Luau Obfuscator](https://img.shields.io/badge/%3CLuau%3E_OBFUSCATOR-0d1117?style=flat-square&logo=roblox&logoColor=white)](https://www.roblox.com)
+[![Lua Obfuscator](https://img.shields.io/badge/LUA_OBFUSCATOR-0d1117?style=flat-square&logo=lua&logoColor=38bdf8)](https://github.com/tienxida112-blip/Eatfuscator)
+[![Luau Obfuscator](https://img.shields.io/badge/LUAU_OBFUSCATOR-0d1117?style=flat-square&logo=roblox&logoColor=white)](https://www.roblox.com)
 
 # Eatfuscator
 
