@@ -4,9 +4,9 @@
 
 <br>
 
-[![Stars](https://img.shields.io/github/stars/tienxida112-blip/Eatfuscator?style=flat-square&logo=octicons-star&logoColor=white&color=0d1117&labelColor=161b22&label=STARS)](https://github.com/tienxida112-blip/Eatfuscator/stargazers)
-[![Forks](https://img.shields.io/github/forks/tienxida112-blip/Eatfuscator?style=flat-square&logo=octicons-repo-forked&logoColor=white&color=0d1117&labelColor=161b22&label=FORKS)](https://github.com/tienxida112-blip/Eatfuscator/network/members)
-[![Release](https://img.shields.io/github/v/release/tienxida112-blip/Eatfuscator?style=flat-square&logo=octicons-tag&logoColor=white&color=0d1117&labelColor=161b22&label=RELEASE)](https://github.com/tienxida112-blip/Eatfuscator/releases)
+[![Stars](https://img.shields.io/github/stars/tienxida112-blip/Eatfuscator?style=flat-square&logo=sparkles&logoColor=white&color=0d1117&labelColor=161b22&label=STARS)](https://github.com/tienxida112-blip/Eatfuscator/stargazers)
+[![Forks](https://img.shields.io/github/forks/tienxida112-blip/Eatfuscator?style=flat-square&logo=git&logoColor=white&color=0d1117&labelColor=161b22&label=FORKS)](https://github.com/tienxida112-blip/Eatfuscator/network/members)
+[![Release](https://img.shields.io/github/v/release/tienxida112-blip/Eatfuscator?style=flat-square&logo=dropbox&logoColor=white&color=0d1117&labelColor=161b22&label=RELEASE)](https://github.com/tienxida112-blip/Eatfuscator/releases)
 
 [![License AGPLv3](https://img.shields.io/badge/AGPLv3_LICENSE-0d1117?style=flat-square&logo=gnu&logoColor=white)](https://github.com/tienxida112-blip/Eatfuscator/blob/main/LICENSE.txt)
 [![Lua Obfuscator](https://img.shields.io/badge/LUA_OBFUSCATOR-0d1117?style=flat-square&logo=lua&logoColor=38bdf8)](https://github.com/tienxida112-blip/Eatfuscator)
