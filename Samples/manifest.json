@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Test/cases_metatables.lua",
+    "output": "Samples/sample_metatables.lua",
+    "seed": 542959014,
+    "bytes": 105419
+  },
+  {
+    "input": "Test/cases_binary.lua",
+    "output": "Samples/sample_binary.lua",
+    "seed": 2558780306,
+    "bytes": 103613
+  },
+  {
+    "input": "Test/cases_strings.lua",
+    "output": "Samples/sample_strings.lua",
+    "seed": 1147506309,
+    "bytes": 103050
+  },
+  {
+    "input": "Test/cases_json.lua",
+    "output": "Samples/sample_json.lua",
+    "seed": 3215322064,
+    "bytes": 103991
+  },
+  {
+    "input": "Test/cases_varargs.lua",
+    "output": "Samples/sample_varargs.lua",
+    "seed": 1808167455,
+    "bytes": 103675
+  },
+  {
+    "input": "Test/cases_patterns.lua",
+    "output": "Samples/sample_patterns.lua",
+    "seed": 3617037476,
+    "bytes": 103230
+  },
+  {
+    "input": "Test/cases_matrix.lua",
+    "output": "Samples/sample_matrix.lua",
+    "seed": 2060272466,
+    "bytes": 105771
+  },
+  {
+    "input": "Test/cases_numbers_deep.lua",
+    "output": "Samples/sample_numbers_deep.lua",
+    "seed": 1982596652,
+    "bytes": 104857
+  },
+  {
+    "input": "Test/cases_words.lua",
+    "output": "Samples/sample_words.lua",
+    "seed": 2813173708,
+    "bytes": 104420
+  },
+  {
+    "input": "Test/cases_bits.lua",
+    "output": "Samples/sample_bits.lua",
+    "seed": 661518370,
+    "bytes": 104501
+  }
+]
