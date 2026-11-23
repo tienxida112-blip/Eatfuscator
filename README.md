@@ -1,13 +1,26 @@
-![Banner Repo](https://raw.githubusercontent.com/tienxida112-blip/Eatfuscator/refs/heads/main/Background.png)
+<div align="center">
 
-[![AGPL v3](https://img.shields.io/badge/AGPL-v3-blue)](https://github.com/tienxida112-blip/Eatfuscator/blob/main/LICENSE.txt)
-[![Roblox](https://img.shields.io/badge/Roblox-platform-red)](https://www.roblox.com)
+<img src="https://raw.githubusercontent.com/tienxida112-blip/Eatfuscator/refs/heads/main/Background.png" alt="Eatfuscator Banner" width="100%">
+
+<br>
+
+[![Stars](https://img.shields.io/github/stars/tienxida112-blip/Eatfuscator?style=flat-square&logo=github&color=0d1117&labelColor=161b22)](https://github.com/tienxida112-blip/Eatfuscator/stargazers)
+[![Forks](https://img.shields.io/github/forks/tienxida112-blip/Eatfuscator?style=flat-square&logo=git&color=0d1117&labelColor=161b22)](https://github.com/tienxida112-blip/Eatfuscator/network/members)
+[![Release](https://img.shields.io/github/v/release/tienxida112-blip/Eatfuscator?style=flat-square&logo=githubactions&color=0d1117&labelColor=161b22&label=RELEASE)](https://github.com/tienxida112-blip/Eatfuscator/releases)
+
+[![License AGPLv3](https://img.shields.io/badge/AGPLv3_LICENSE-0d1117?style=flat-square&logo=gnu&logoColor=white)](https://github.com/tienxida112-blip/Eatfuscator/blob/main/LICENSE.txt)
+[![Lua Obfuscator](https://img.shields.io/badge/%3CLua%3E_OBFUSCATOR-0d1117?style=flat-square&logo=lua&logoColor=38bdf8)](https://github.com/tienxida112-blip/Eatfuscator)
+[![Luau Obfuscator](https://img.shields.io/badge/%3CLuau%3E_OBFUSCATOR-0d1117?style=flat-square&logo=roblox&logoColor=white)](https://www.roblox.com)
 
 # Eatfuscator
 
-Lua / Luau source protection.
+**Lua / Luau source protection.**
 
-Eatfuscator turns source into a custom bytecode VM, then wraps and compresses the loader. It has host checks and anti-tamper checks, but it's still obfuscation, not a lock. Don't put secrets in code you ship.
+Eatfuscator turns source into a custom bytecode VM, then wraps and compresses the loader.  
+It has host checks and anti-tamper checks, but it's still obfuscation, not a lock.  
+Don't put secrets in code you ship.
+
+</div>
 
 ## Pipeline
 
