@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Test/cases_controlflow.lua",
+    "output": "Samples/sample_controlflow.lua",
+    "seed": 3909977564,
+    "bytes": 104905
+  },
+  {
+    "input": "Test/cases_multivalue.lua",
+    "output": "Samples/sample_multivalue.lua",
+    "seed": 270984360,
+    "bytes": 105067
+  },
+  {
+    "input": "Test/cases_escapes.lua",
+    "output": "Samples/sample_escapes.lua",
+    "seed": 2363405184,
+    "bytes": 102242
+  },
+  {
+    "input": "Test/cases_scoping.lua",
+    "output": "Samples/sample_scoping.lua",
+    "seed": 3472013855,
+    "bytes": 105242
+  },
+  {
+    "input": "Test/cases_aliasing.lua",
+    "output": "Samples/sample_aliasing.lua",
+    "seed": 702038939,
+    "bytes": 104059
+  },
+  {
+    "input": "Test/cases_trampoline.lua",
+    "output": "Samples/sample_trampoline.lua",
+    "seed": 2299421639,
+    "bytes": 105499
+  },
+  {
+    "input": "Test/cases_generators.lua",
+    "output": "Samples/sample_generators.lua",
+    "seed": 1650051829,
+    "bytes": 105568
+  },
+  {
+    "input": "Test/cases_bigint.lua",
+    "output": "Samples/sample_bigint.lua",
+    "seed": 3746603288,
+    "bytes": 105654
+  },
+  {
+    "input": "Test/cases_errors.lua",
+    "output": "Samples/sample_errors.lua",
+    "seed": 2163031949,
+    "bytes": 104191
+  },
+  {
+    "input": "Test/cases_binary.lua",
+    "output": "Samples/sample_binary.lua",
+    "seed": 2007979288,
+    "bytes": 103934
+  }
+]
