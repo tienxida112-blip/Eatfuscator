@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Test/cases_numerics.lua",
+    "output": "Samples/sample_numerics.lua",
+    "seed": 1167456195,
+    "bytes": 103660
+  },
+  {
+    "input": "Test/cases_primes.lua",
+    "output": "Samples/sample_primes.lua",
+    "seed": 1492637995,
+    "bytes": 104961
+  },
+  {
+    "input": "Test/cases_trampoline.lua",
+    "output": "Samples/sample_trampoline.lua",
+    "seed": 1491695357,
+    "bytes": 105168
+  },
+  {
+    "input": "Test/cases_sorters.lua",
+    "output": "Samples/sample_sorters.lua",
+    "seed": 2868357043,
+    "bytes": 103722
+  },
+  {
+    "input": "Test/cases_coroutines.lua",
+    "output": "Samples/sample_coroutines.lua",
+    "seed": 2460058133,
+    "bytes": 103886
+  },
+  {
+    "input": "Test/cases_tables.lua",
+    "output": "Samples/sample_tables.lua",
+    "seed": 592995755,
+    "bytes": 104476
+  },
+  {
+    "input": "Test/cases_binary.lua",
+    "output": "Samples/sample_binary.lua",
+    "seed": 80107601,
+    "bytes": 104511
+  },
+  {
+    "input": "Test/cases_errors.lua",
+    "output": "Samples/sample_errors.lua",
+    "seed": 1678965719,
+    "bytes": 105497
+  },
+  {
+    "input": "Test/cases_scoping.lua",
+    "output": "Samples/sample_scoping.lua",
+    "seed": 4223016609,
+    "bytes": 105285
+  },
+  {
+    "input": "Test/cases_sets.lua",
+    "output": "Samples/sample_sets.lua",
+    "seed": 3308670893,
+    "bytes": 103555
+  }
+]
