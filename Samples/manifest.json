@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Test/cases_aliasing.lua",
+    "output": "Samples/sample_aliasing.lua",
+    "seed": 3772817619,
+    "bytes": 105175
+  },
+  {
+    "input": "Test/cases_mathlib.lua",
+    "output": "Samples/sample_mathlib.lua",
+    "seed": 106694379,
+    "bytes": 104392
+  },
+  {
+    "input": "Test/cases_lru.lua",
+    "output": "Samples/sample_lru.lua",
+    "seed": 3920711697,
+    "bytes": 104136
+  },
+  {
+    "input": "Test/cases_multivalue.lua",
+    "output": "Samples/sample_multivalue.lua",
+    "seed": 4073837294,
+    "bytes": 104010
+  },
+  {
+    "input": "Test/cases_queues.lua",
+    "output": "Samples/sample_queues.lua",
+    "seed": 3180118097,
+    "bytes": 106203
+  },
+  {
+    "input": "Test/cases_json.lua",
+    "output": "Samples/sample_json.lua",
+    "seed": 2235134834,
+    "bytes": 104159
+  },
+  {
+    "input": "Test/cases_strings.lua",
+    "output": "Samples/sample_strings.lua",
+    "seed": 3224284346,
+    "bytes": 104944
+  },
+  {
+    "input": "Test/cases_primes.lua",
+    "output": "Samples/sample_primes.lua",
+    "seed": 64688795,
+    "bytes": 105021
+  },
+  {
+    "input": "Test/cases_graphs_dfs.lua",
+    "output": "Samples/sample_graphs_dfs.lua",
+    "seed": 1845637077,
+    "bytes": 106161
+  },
+  {
+    "input": "Test/cases_metatables.lua",
+    "output": "Samples/sample_metatables.lua",
+    "seed": 1866105617,
+    "bytes": 105149
+  }
+]
