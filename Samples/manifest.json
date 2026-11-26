@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Test/cases_coroutines.lua",
+    "output": "Samples/sample_coroutines.lua",
+    "seed": 2402250952,
+    "bytes": 104544
+  },
+  {
+    "input": "Test/cases_sets.lua",
+    "output": "Samples/sample_sets.lua",
+    "seed": 4050313613,
+    "bytes": 105249
+  },
+  {
+    "input": "Test/cases_varargs.lua",
+    "output": "Samples/sample_varargs.lua",
+    "seed": 2239676252,
+    "bytes": 104266
+  },
+  {
+    "input": "Test/cases_primes.lua",
+    "output": "Samples/sample_primes.lua",
+    "seed": 406137055,
+    "bytes": 104645
+  },
+  {
+    "input": "Test/cases_json.lua",
+    "output": "Samples/sample_json.lua",
+    "seed": 3579643770,
+    "bytes": 102669
+  },
+  {
+    "input": "Test/cases_mathlib.lua",
+    "output": "Samples/sample_mathlib.lua",
+    "seed": 2007625208,
+    "bytes": 104919
+  },
+  {
+    "input": "Test/cases_strings.lua",
+    "output": "Samples/sample_strings.lua",
+    "seed": 612511913,
+    "bytes": 104709
+  },
+  {
+    "input": "Test/cases_trampoline.lua",
+    "output": "Samples/sample_trampoline.lua",
+    "seed": 3570278638,
+    "bytes": 103535
+  },
+  {
+    "input": "Test/cases_escapes.lua",
+    "output": "Samples/sample_escapes.lua",
+    "seed": 3807777315,
+    "bytes": 103716
+  },
+  {
+    "input": "Test/cases_matrix.lua",
+    "output": "Samples/sample_matrix.lua",
+    "seed": 2030233944,
+    "bytes": 103982
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "name": "eatfuscator",
+  "private": true,
+  "version": "0.51.0",
+  "description": "Lua/Luau source protection using a custom virtual machine",
+  "main": "index.js",
+  "scripts": {
+    "start": "node cli.js",
+    "test": "node src/Toolchain/suite.js",
+    "audit": "node tools/audit.js Test/smoke_test.lua",
+    "verify": "node tools/verify.js",
+    "hosts": "node tools/hosts.js",
+    "tamper": "node tools/tamper.js",
+    "client": "node tools/robloxclient.js",
+    "test:flow": "node tools/flow_test.js",
+    "test:compileguard": "node tools/compileguard_test.js",
+    "test:trap-bypass": "node tools/trap_bypass_test.js",
+    "test:opcode-mask": "node tools/opcode_mask_test.js",
+    "test:extract-stage": "node tools/extract_stage_test.js",
+    "test:forge": "node tools/forge_test.js",
+    "test:num": "node tools/num_test.js",
+    "samples": "node tools/build_samples.js",
+    "test:shard": "node tools/shard_test.js",
+    "test:probes": "node tools/probe_test.js",
+    "test:forge-guard": "node tools/forge_guard_test.js",
+    "test:resident-guard": "node tools/resident_guard_test.js",
+    "test:instruction-digest": "node tools/instruction_digest_test.js",
+    "test:constant-cipher": "node tools/constant_cipher_test.js",
+    "test:image-bounds": "node tools/image_bounds_test.js",
+    "test:cli-validation": "node tools/cli_validation_test.js"
+  },
+  "devDependencies": {
+    "fengari": "^0.1.5",
+    "fengari-node-cli": "^0.1.0",
+    "luaparse": "^0.3.1"
+  },
+  "license": "MIT"
+}
