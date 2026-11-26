@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Test/cases_controlflow.lua",
+    "output": "Samples/sample_controlflow.lua",
+    "seed": 416710367,
+    "bytes": 105421
+  },
+  {
+    "input": "Test/cases_matrix.lua",
+    "output": "Samples/sample_matrix.lua",
+    "seed": 595037692,
+    "bytes": 103500
+  },
+  {
+    "input": "Test/cases_numerics.lua",
+    "output": "Samples/sample_numerics.lua",
+    "seed": 2930949011,
+    "bytes": 104315
+  },
+  {
+    "input": "Test/cases_lru.lua",
+    "output": "Samples/sample_lru.lua",
+    "seed": 1343283839,
+    "bytes": 105483
+  },
+  {
+    "input": "Test/cases_bigint.lua",
+    "output": "Samples/sample_bigint.lua",
+    "seed": 1572337964,
+    "bytes": 105338
+  },
+  {
+    "input": "Test/cases_varargs.lua",
+    "output": "Samples/sample_varargs.lua",
+    "seed": 283168459,
+    "bytes": 103943
+  },
+  {
+    "input": "Test/cases_metatables.lua",
+    "output": "Samples/sample_metatables.lua",
+    "seed": 3497970084,
+    "bytes": 104027
+  },
+  {
+    "input": "Test/cases_aliasing.lua",
+    "output": "Samples/sample_aliasing.lua",
+    "seed": 3053701286,
+    "bytes": 104004
+  },
+  {
+    "input": "Test/cases_state_machine.lua",
+    "output": "Samples/sample_state_machine.lua",
+    "seed": 764685842,
+    "bytes": 103533
+  },
+  {
+    "input": "Test/cases_primes.lua",
+    "output": "Samples/sample_primes.lua",
+    "seed": 1890776721,
+    "bytes": 103616
+  }
+]
