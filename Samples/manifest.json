@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Test/cases_multivalue.lua",
+    "output": "Samples/sample_multivalue.lua",
+    "seed": 2009905773,
+    "bytes": 105281
+  },
+  {
+    "input": "Test/cases_graphs_dfs.lua",
+    "output": "Samples/sample_graphs_dfs.lua",
+    "seed": 2393561121,
+    "bytes": 103903
+  },
+  {
+    "input": "Test/cases_scoping.lua",
+    "output": "Samples/sample_scoping.lua",
+    "seed": 773101079,
+    "bytes": 105337
+  },
+  {
+    "input": "Test/cases_iteration.lua",
+    "output": "Samples/sample_iteration.lua",
+    "seed": 3244864400,
+    "bytes": 104452
+  },
+  {
+    "input": "Test/cases_operators.lua",
+    "output": "Samples/sample_operators.lua",
+    "seed": 3482232785,
+    "bytes": 105661
+  },
+  {
+    "input": "Test/cases_json.lua",
+    "output": "Samples/sample_json.lua",
+    "seed": 2881996565,
+    "bytes": 102020
+  },
+  {
+    "input": "Test/cases_queues.lua",
+    "output": "Samples/sample_queues.lua",
+    "seed": 3749861185,
+    "bytes": 105157
+  },
+  {
+    "input": "Test/cases_bigint.lua",
+    "output": "Samples/sample_bigint.lua",
+    "seed": 1024085217,
+    "bytes": 104407
+  },
+  {
+    "input": "Test/cases_primes.lua",
+    "output": "Samples/sample_primes.lua",
+    "seed": 3316235323,
+    "bytes": 104116
+  },
+  {
+    "input": "Test/cases_numbers_deep.lua",
+    "output": "Samples/sample_numbers_deep.lua",
+    "seed": 3845481730,
+    "bytes": 104418
+  }
+]
