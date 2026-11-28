@@ -1,0 +1,62 @@
+[
+  {
+    "input": "Test/cases_binary.lua",
+    "output": "Samples/sample_binary.lua",
+    "seed": 3010591457,
+    "bytes": 102688
+  },
+  {
+    "input": "Test/cases_json.lua",
+    "output": "Samples/sample_json.lua",
+    "seed": 2630730580,
+    "bytes": 100682
+  },
+  {
+    "input": "Test/cases_numerics.lua",
+    "output": "Samples/sample_numerics.lua",
+    "seed": 3667623321,
+    "bytes": 102659
+  },
+  {
+    "input": "Test/cases_iteration.lua",
+    "output": "Samples/sample_iteration.lua",
+    "seed": 3842517402,
+    "bytes": 102513
+  },
+  {
+    "input": "Test/cases_bits.lua",
+    "output": "Samples/sample_bits.lua",
+    "seed": 3784948154,
+    "bytes": 103335
+  },
+  {
+    "input": "Test/cases_metatables.lua",
+    "output": "Samples/sample_metatables.lua",
+    "seed": 1475111110,
+    "bytes": 103208
+  },
+  {
+    "input": "Test/cases_tables.lua",
+    "output": "Samples/sample_tables.lua",
+    "seed": 721349582,
+    "bytes": 103020
+  },
+  {
+    "input": "Test/cases_matrix.lua",
+    "output": "Samples/sample_matrix.lua",
+    "seed": 1870368394,
+    "bytes": 102985
+  },
+  {
+    "input": "Test/cases_strings.lua",
+    "output": "Samples/sample_strings.lua",
+    "seed": 3213741635,
+    "bytes": 102565
+  },
+  {
+    "input": "Test/cases_controlflow.lua",
+    "output": "Samples/sample_controlflow.lua",
+    "seed": 3186678273,
+    "bytes": 102960
+  }
+]
